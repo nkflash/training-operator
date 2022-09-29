@@ -16,10 +16,14 @@ spec:
       annotations:
         sidecar.istio.io/inject: "false"
     spec:
+      imagePullSecrets:
+        - name: harbor-platform-readonly-secret
       containers:
         - command:
             - /manager
-          image: kubeflow/training-operator
+            - --enable-gang-scheduling=true
+          image: harbor-dev.platform.baai-inner.ac.cn/airs-system/business/training-operator
+          imagePullPolicy: "Always"
           name: training-operator
           ports:
             - containerPort: 8080
@@ -50,8 +54,8 @@ spec:
             timeoutSeconds: 3
           resources:
             limits:
-              cpu: 100m
-              memory: 30Mi
+              cpu: 1000m
+              memory: 6000Mi
             requests:
               cpu: 100m
               memory: 20Mi

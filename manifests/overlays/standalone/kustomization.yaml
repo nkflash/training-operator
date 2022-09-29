@@ -5,5 +5,5 @@ resources:
   - ../../base
   - namespace.yaml
 images:
-  - name: kubeflow/training-operator
-    newTag: "v1-e1434f6"
+  - name: harbor-dev.platform.baai-inner.ac.cn/airs-system/business/training-operator
+    newTag: latest

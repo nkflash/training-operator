@@ -18,6 +18,13 @@ spec:
     spec:
       imagePullSecrets:
         - name: harbor-platform-readonly-secret
+      nodeSelector:
+        node-role.kubernetes.io/baai-infra: ""
+        node-role.kubernetes.io/baai-infra-ib: ""
+      tolerations:
+        - effect: NoSchedule
+          key: node-role.kubernetes.io/baai-infra
+          operator: Exists
       containers:
         - command:
             - /manager
@@ -55,9 +62,9 @@ spec:
           resources:
             limits:
               cpu: 1000m
-              memory: 6000Mi
+              memory: 100Gi
             requests:
               cpu: 100m
-              memory: 20Mi
+              memory: 10Gi
       serviceAccountName: training-operator
       terminationGracePeriodSeconds: 10

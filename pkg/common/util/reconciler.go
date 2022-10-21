@@ -110,7 +110,7 @@ func OnDependentUpdateFunc(jc *common.JobController) func(updateEvent event.Upda
 			if job == nil {
 				return false
 			}
-			logger.Debugf("pod/service has a controller ref: %v, %v", newObj, oldObj)
+			//logger.Infof("pod/service has a controller ref: %v, %v", string(newJson), string(oldJson))
 			return true
 		}
 		return false

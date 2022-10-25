@@ -5,5 +5,5 @@ resources:
   - ../../base
   - namespace.yaml
 images:
-  - name: harbor-dev.platform.baai-inner.ac.cn/airs-system/business/training-operator
-    newTag: latest
+  - name: harbor.platform.baai-inner.ac.cn/baai-third/training-operator/training-operator
+    newTag: release-podgroup-watch

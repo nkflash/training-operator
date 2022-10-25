@@ -29,7 +29,7 @@ spec:
         - command:
             - /manager
             - --enable-gang-scheduling=true
-          image: harbor-dev.platform.baai-inner.ac.cn/baai-infra/airs/training-operator:release-podgroup-watch
+          image: harbor.platform.baai-inner.ac.cn/baai-third/training-operator/training-operator:release-podgroup-watch
           imagePullPolicy: "Always"
           name: training-operator
           ports:
@@ -61,10 +61,10 @@ spec:
             timeoutSeconds: 3
           resources:
             limits:
-              cpu: 1000m
-              memory: 100Gi
+              cpu: 4000m
+              memory: 10Gi
             requests:
               cpu: 100m
-              memory: 10Gi
+              memory: 5Gi
       serviceAccountName: training-operator
       terminationGracePeriodSeconds: 10

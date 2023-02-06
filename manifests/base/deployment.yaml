@@ -29,7 +29,7 @@ spec:
         - command:
             - /manager
             - --enable-gang-scheduling=true
-          image: harbor.platform.baai-inner.ac.cn/baai-third/training-operator/training-operator:release-podgroup-watch
+          image: harbor-dev.platform.baai-inner.ac.cn/baai-third/training-operator/training-operator:release-paddle-support
           imagePullPolicy: "Always"
           name: training-operator
           ports:
